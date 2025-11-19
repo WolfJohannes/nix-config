@@ -1,5 +1,3 @@
-{ pkgs, system }
-
 {
   imports = [
     ../../modules/system/base.nix
@@ -14,7 +12,6 @@
     ../../modules/hardware/nvidia.nix
 
     ./hardware.nix
-    ./overrides.nix
   ];
 
   networking.hostName = "elaris-desktop";
