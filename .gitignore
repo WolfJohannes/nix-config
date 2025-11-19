@@ -1,0 +1,15 @@
+# Nix build artifacts
+result
+result-*
+
+.vscode/
+
+.envrc
+.direnv/
+
+*.log
+
+*~
+*.swp
+
+secrets/
