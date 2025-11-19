@@ -1,5 +1,3 @@
-{ pkgs, system }
-
 {
   imports = [
     ../../modules/system/base.nix
