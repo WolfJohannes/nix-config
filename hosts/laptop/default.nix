@@ -11,7 +11,6 @@
     ../../modules/hardware/common-laptop.nix
 
     ./hardware.nix
-    ./overrides.nix
   ];
 
   networking.hostName = "laptop";

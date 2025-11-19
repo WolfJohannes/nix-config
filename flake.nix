@@ -8,23 +8,17 @@
   outputs = { self, nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
-      lib = nixpkgs.lib;
-    in {
+      mkHost = name: nixpkgs.lib.nixosSystem {
+        system = system;
+        modules = [ ./hosts/${name}/default.nix ];
+	specialArgs = { inherit inputs; };
+      };
+    in 
+    {
       nixosConfigurations = {
-        desktop-elaris = lib.nixosSystem {
-          inherit system;
-          modules = [ ./hosts/desktop-elaris/default.nix ];
-        };
-
-        laptop = lib.nixosSystem {
-          inherit system;
-          modules = [ ./hosts/laptop/default.nix ];
-        };
-
-        vm = lib.nixosSystem {
-          inherit system;
-          modules = [ ./hosts/vm/default.nix ];
-        };
+        desktop-elaris = mkHost "desktop-elaris";
+        laptop         = mkHost "laptop";
+        vm             = mkHost "vm";
       };
     };
 }

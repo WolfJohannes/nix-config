@@ -7,11 +7,11 @@
 
     ../../modules/desktop/gnome.nix
     ../../modules/desktop/pipewire.nix
+    ../../modules/desktop/packages.nix 
 
     ../../modules/hardware/nvidia.nix
 
     ./hardware.nix
-    ./overrides.nix
   ];
 
   networking.hostName = "elaris-desktop";
